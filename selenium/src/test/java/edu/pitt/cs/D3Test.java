@@ -56,7 +56,7 @@ public class D3Test {
     // Test name: TEST-1-LINKS
     // Step # | name | target | value
     // 1 | open | / | 
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     // 2 | runScript | document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false"; | 
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     // 3 | setWindowSize | 1376x816 | 
@@ -67,7 +67,7 @@ public class D3Test {
       wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Reset")));
     }
     // 5 | assert | link=Reset | href="/reset"
-    assertThat(driver.findElement(By.linkText("Reset")).getAttribute("href"), is("https://cs1632.appspot.com/reset"));
+    assertThat(driver.findElement(By.linkText("Reset")).getAttribute("href"), is("http://localhost:8080/reset"));
   }
   
   @Test
@@ -75,7 +75,7 @@ public class D3Test {
     // Test name: TEST-2-RESET
     // Step # | name | target | value
     // 1 | open | / | 
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     // 2 | runScript | document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false"; | 
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     // 3 | setWindowSize | 1376x816 | 
@@ -120,7 +120,7 @@ public class D3Test {
     // Test name: TEST-3-CATALOG
     // Step # | name | target | value
     // 1 | open | / | 
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     // 2 | runScript | document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false"; | 
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     // 3 | setWindowSize | 1376x816 | 
@@ -133,12 +133,12 @@ public class D3Test {
       wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li:nth-child(3) > img")));
     }
     // 6 | assert | xpath=(//img)[2] | src="/images/cat2.jpg"
-    assertThat(driver.findElement(By.xpath("(//img)[2]")).getAttribute("src"), is("https://cs1632.appspot.com/images/cat2.jpg"));
+    assertThat(driver.findElement(By.xpath("(//img)[2]")).getAttribute("src"), is("http://localhost:8080/images/cat2.jpg"));
   }
   
   @Test
   public void tEST4LISTING() {
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.manage().window().setSize(new Dimension(909, 816));
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -157,7 +157,7 @@ public class D3Test {
   @Test
   public void tEST5RENTACAT() {
     // Test name: TEST-5-RENT-A-CAT
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.findElement(By.linkText("Rent-A-Cat")).click();
     // Check for Rent button
@@ -169,7 +169,7 @@ public class D3Test {
   @Test
   public void tEST6RENT() {
     // Test name: TEST-6-RENT
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.findElement(By.linkText("Rent-A-Cat")).click();
     // Enter "1" into the input box for the rented cat ID
@@ -195,7 +195,7 @@ public class D3Test {
   
   @Test
   public void tEST7RETURN() {
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.manage().window().setSize(new Dimension(783, 816));
     driver.findElement(By.linkText("Rent-A-Cat")).click();
@@ -209,7 +209,7 @@ public class D3Test {
   }
   @Test
   public void tEST8FEEDACAT() {
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.manage().window().setSize(new Dimension(783, 816));
     driver.findElement(By.linkText("Feed-A-Cat")).click();
