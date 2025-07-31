@@ -220,7 +220,7 @@ public class D3Test {
   }
   @Test
   public void tEST9FEED() {
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
     driver.manage().window().setSize(new Dimension(784, 816));
     driver.findElement(By.linkText("Feed-A-Cat")).click();
@@ -236,7 +236,7 @@ public class D3Test {
   @Test
   public void tEST10GREETACAT() {
     // Test name: TEST-10-GREET-A-CAT
-    driver.get("https://cs1632.appspot.com/");
+    driver.get("http://localhost:8080/");
     driver.findElement(By.linkText("Greet-A-Cat")).click();
     String pageText = driver.findElement(By.tagName("body")).getText();
     assertTrue(pageText.contains("Meow!Meow!Meow!"));
@@ -245,7 +245,7 @@ public class D3Test {
   @Test
   public void tEST11GREETACATWITHNAME() {
     // Test name: TEST-11-GREET-A-CAT-WITH-NAME
-    driver.get("https://cs1632.appspot.com/greet-a-cat/Jennyanydots");
+    driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
     String pageText = driver.findElement(By.tagName("body")).getText();
     assertTrue(pageText.contains("Meow! from Jennyanydots."));
   }
